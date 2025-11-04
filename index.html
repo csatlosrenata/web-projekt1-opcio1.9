@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hova küldjem az anyósomat?</title>
 
-  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css" />
@@ -13,14 +13,16 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/hu.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
 </head>
+
 <body>
   <header>
-    <h1>Hova küldjem az anyósomat nyaralni?</h1>
+    <h1>😈 Hova küldjem az anyósomat nyaralni?</h1>
+    <p>Válassz időpontot, és segítünk megtalálni a „tökéletes” úti célt...</p>
   </header>
 
   <main>
     <section id="filters">
-      <h2>Szűrési feltételek</h2>
+      <h2>🧳 Szűrési feltételek</h2>
       <div class="filter-grid">
         <div class="filter-item">
           <label for="daterange">Utazás dátuma:</label>
@@ -31,26 +33,59 @@
           <label for="weatherType">Időjárás típusa:</label>
           <select id="weatherType">
             <option value="">Mindegy</option>
-            <option value="sunny">Napos</option>
-            <option value="cloudy">Borús</option>
+            <option value="sunny">☀️ Napos</option>
+            <option value="cloudy">☁️ Borús</option>
+            <option value="rain">🌧️ Esős</option>
+            <option value="snow">❄️ Havas</option>
           </select>
         </div>
 
+        <div class="filter-item">
+          <label for="minTemp">Minimum hőmérséklet (°C):</label>
+          <input type="number" id="minTemp" placeholder="Pl. 15" />
+        </div>
+
+        <div class="filter-item">
+          <label for="maxTemp">Maximum hőmérséklet (°C):</label>
+          <input type="number" id="maxTemp" placeholder="Pl. 30" />
+        </div>
+
         <div class="filter-item full-width">
-          <button id="searchBtn">Ajánlj helyszínt!</button>
+          <button id="searchBtn">🔍 Mutasd, hova száműzzük!</button>
         </div>
       </div>
     </section>
 
     <section id="results">
-      <h2>Ajánlott helyszínek</h2>
+      <h2>🌍 Ajánlott helyszínek</h2>
       <div id="locations"></div>
     </section>
 
-    <div id="map" style="height: 400px; margin-top: 2em;"></div>
-    <div id="bookingPanel" style="margin-top: 2em;"></div>
+    <div id="map"></div>
+    <section id="bookingPanel">
+      <div class="booking-card">
+        <h3>🧾 Foglalás: <span id="bookingCity">–</span></h3>
+        <p>Időszak: <span id="bookingDates">–</span></p>
+        <button id="openFormBtn">Foglalás indítása</button>
+        <div id="bookingFormContainer" style="display:none; margin-top:1em;">
+          <form id="bookingForm">
+              <label for="name">Név:</label>
+              <input type="text" id="name" name="name" required placeholder="Pl. Kovács Zsuzsa" />
 
-</main>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required placeholder="email@pelda.hu" />
+
+              <label for="phone">Telefonszám:</label>
+              <input type="tel" id="phone" name="phone" required placeholder="+40 20 123 4567" />
+
+              <button type="submit">Foglalás elküldése</button>
+            </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <script src="script.js"></script>
 </body>
