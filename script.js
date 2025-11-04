@@ -463,7 +463,7 @@ function displayResults(results) {
 
       showBookingPanel(result.city, result.startDate, result.endDate);
 
-      // 👇 Görgetés a térképhez
+      
       document.getElementById("map").scrollIntoView({ behavior: "smooth" });
     });
 

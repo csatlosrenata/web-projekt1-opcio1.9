@@ -21,40 +21,42 @@
   </header>
 
   <main>
-    <section id="filters">
-      <h2>🧳 Szűrési feltételek</h2>
-      <div class="filter-grid">
-        <div class="filter-item">
-          <label for="daterange">Utazás dátuma:</label>
-          <input type="text" id="daterange" placeholder="Válassz időszakot" />
+    <div class="filter-grid">
+        
+        <div class="filter-row">
+          <div class="filter-item">
+            <label for="daterange">Utazás dátuma:</label>
+            <input type="text" id="daterange" placeholder="Válassz időszakot" />
+          </div>
+          <div class="filter-item">
+            <label for="weatherType">Időjárás típusa:</label>
+            <select id="weatherType">
+              <option value="">Mindegy</option>
+              <option value="sunny">☀️ Napos</option>
+              <option value="cloudy">☁️ Borús</option>
+              <option value="rain">🌧️ Esős</option>
+              <option value="snow">❄️ Havas</option>
+            </select>
+          </div>
         </div>
 
-        <div class="filter-item">
-          <label for="weatherType">Időjárás típusa:</label>
-          <select id="weatherType">
-            <option value="">Mindegy</option>
-            <option value="sunny">☀️ Napos</option>
-            <option value="cloudy">☁️ Borús</option>
-            <option value="rain">🌧️ Esős</option>
-            <option value="snow">❄️ Havas</option>
-          </select>
+        
+        <div class="filter-row">
+          <div class="filter-item">
+            <label for="minTemp">Minimum hőmérséklet (°C):</label>
+            <input type="number" id="minTemp" placeholder="Pl. 15" />
+          </div>
+          <div class="filter-item">
+            <label for="maxTemp">Maximum hőmérséklet (°C):</label>
+            <input type="number" id="maxTemp" placeholder="Pl. 30" />
+          </div>
         </div>
 
-        <div class="filter-item">
-          <label for="minTemp">Minimum hőmérséklet (°C):</label>
-          <input type="number" id="minTemp" placeholder="Pl. 15" />
-        </div>
-
-        <div class="filter-item">
-          <label for="maxTemp">Maximum hőmérséklet (°C):</label>
-          <input type="number" id="maxTemp" placeholder="Pl. 30" />
-        </div>
-
-        <div class="filter-item full-width">
+        
+        <div class="filter-row ">
           <button id="searchBtn">🔍 Mutasd, hova száműzzük!</button>
         </div>
       </div>
-    </section>
 
     <section id="results">
       <h2>🌍 Ajánlott helyszínek</h2>

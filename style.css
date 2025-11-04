@@ -40,16 +40,26 @@ main {
 }
 
 .filter-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
 }
 
-.filter-item label {
-  display: block;
-  margin-bottom: 0.5em;
-  font-weight: 600;
+.filter-row {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
 }
+
+.filter-item {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-row.center {
+  justify-content: center;
+}
+
 
 #searchBtn {
   background: linear-gradient(135deg, #8a2be2, #6a5acd);
